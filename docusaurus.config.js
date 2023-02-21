@@ -31,6 +31,10 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -58,15 +62,15 @@ const config = {
       navbar: {
         title: 'Stable Wiki',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Stable Wiki Logo',
+          src: 'img/icon.png',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'mechanics/graph',
             position: 'left',
-            label: 'Documentation',
+            label: 'Mechanics',
           },
           {
             href: 'https://github.com/GabrielVidal1/stable-wiki',
@@ -82,8 +86,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Mechanics',
+                to: '/docs/mechanics',
               },
             ],
           },
@@ -91,17 +95,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
                 href: 'https://github.com/GabrielVidal1/stable-wiki',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Gabriel Vidal. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Stable Wiki. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
