@@ -44,9 +44,9 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
         },
-        blog: {
-          showReadingTime: true,
-        },
+        // blog: {
+        //   showReadingTime: true,
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -68,9 +68,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'mechanics/graph',
+            docId: 'stable-diffusion/README',
             position: 'left',
-            label: 'Mechanics',
+            label: 'Stable Diffusion',
           },
           {
             href: 'https://github.com/GabrielVidal1/stable-wiki',
@@ -86,8 +86,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Mechanics',
-                to: '/docs/mechanics',
+                label: 'Stable Diffusion',
+                to: '/docs/stable-diffusion',
               },
             ],
           },
