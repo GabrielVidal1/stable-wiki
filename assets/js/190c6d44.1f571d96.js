@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkstable_wiki=self.webpackChunkstable_wiki||[]).push([[18],{5461:e=>{e.exports=JSON.parse('{"title":"Mechanics","description":"Components","slug":"/category/mechanics","permalink":"/stable-wiki/docs/category/mechanics","navigation":{"next":{"title":"graph","permalink":"/stable-wiki/docs/mechanics/graph"}}}')}}]);
