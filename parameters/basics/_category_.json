@@ -1,0 +1,8 @@
+{
+  "label": "Base Parameters",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Base parameters to control the output images"
+  }
+}
