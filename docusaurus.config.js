@@ -21,9 +21,9 @@ async function createConfig() {
     // If you aren't using GitHub pages, you don't need these.
     organizationName: "GabrielVidal1", // Usually your GitHub org/user name.
     projectName: "stable-wiki", // Usually your repo name.
-    deploymentBranch: 'gh-pages',
+    deploymentBranch: "gh-pages",
     trailingSlash: false,
-    
+
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
 
@@ -85,18 +85,18 @@ async function createConfig() {
               label: "Mechanics",
             },
             {
-              to: '/dynamics/intro',
-              label: 'Dynamics',
+              to: "/dynamics/intro",
+              label: "Dynamics",
               activeBaseRegex: `/dynamics/`,
-              position: 'left',
+              position: "left",
             },
             {
-              to: '/parameters/intro',
-              label: 'Parameters',
-              position: 'left',
+              to: "/parameters/intro",
+              label: "Parameters",
+              position: "left",
               activeBaseRegex: `/parameters/`,
             },
-            {to: 'contribute', label:"Contribute", position:"left"},
+            { to: "contribute", label: "Contribute", position: "left" },
             {
               href: "https://learnprompting.org/docs/category/%EF%B8%8F-image-prompting",
               label: "Prompt engineering",
@@ -139,39 +139,39 @@ async function createConfig() {
         },
       }),
 
-      plugins: [
-        [
-          '@docusaurus/plugin-content-docs',
-          {
-            id: 'community',
-            path: 'parameters',
-            routeBasePath: 'parameters',
-            sidebarPath: require.resolve('./sidebarsParameters.js'),
-            // ... other options
+    plugins: [
+      [
+        "@docusaurus/plugin-content-docs",
+        {
+          id: "community",
+          path: "parameters",
+          routeBasePath: "parameters",
+          sidebarPath: require.resolve("./sidebarsParameters.js"),
+          // ... other options
+        },
+      ],
+      [
+        "@docusaurus/plugin-content-docs",
+        {
+          id: "dynamics",
+          path: "dynamics",
+          routeBasePath: "dynamics",
+          sidebarPath: require.resolve("./sidebarsDynamics.js"),
+          // ... other options
+        },
+      ],
+      async function myPlugin(context, options) {
+        return {
+          name: "docusaurus-tailwindcss",
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require("tailwindcss"));
+            postcssOptions.plugins.push(require("autoprefixer"));
+            return postcssOptions;
           },
-        ],
-        [
-          '@docusaurus/plugin-content-docs',
-          {
-            id: 'dynamics',
-            path: 'dynamics',
-            routeBasePath: 'dynamics',
-            sidebarPath: require.resolve('./sidebarsDynamics.js'),
-            // ... other options
-          },
-        ],
-        async function myPlugin(context, options) {
-          return {
-            name: "docusaurus-tailwindcss",
-            configurePostCss(postcssOptions) {
-              // Appends TailwindCSS and AutoPrefixer.
-              postcssOptions.plugins.push(require("tailwindcss"));
-              postcssOptions.plugins.push(require("autoprefixer"));
-              return postcssOptions;
-            },
-          };
-        },      
-      ],    
+        };
+      },
+    ],
   };
 }
 
