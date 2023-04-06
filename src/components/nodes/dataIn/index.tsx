@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Handle, Position } from "reactflow";
-import { SelectField, TextField } from "../../fields";
+import { SelectField, SelectFieldProps, TextField } from "../../fields";
 import BaseNode from "../base";
 
 type DataType = "text" | "image";
@@ -33,29 +33,24 @@ const DataInput = ({ data: { name, datatype, fields } }: any) => {
   );
 };
 
-const possiblePrompts = [
-  "photo of a cat",
-  "drawing of a dog",
-  "sculpture of a bird",
-];
+export type RawPromptProps = {
+  data: {
+    name: string;
+    datatype: DataType;
+    props: SelectFieldProps;
+    prompt: string;
+  };
+};
 
-export const RawPrompt = ({ data: { name, datatype, props } }: any) => {
-  const [value, setValue] = React.useState(possiblePrompts[0]);
-
+export const RawPrompt: React.FC<RawPromptProps> = ({
+  data: { name, datatype, props, prompt },
+}) => {
   return (
     <BaseNode name="Data">
       {/* <TextField name="Prompt" /> */}
-      <SelectField
-        {...props}
-        defaultValue={value}
-        onChange={(e) => {
-          setValue((e.target as any).value);
-        }}
-        name="Select"
-        options={possiblePrompts}
-      />
+      <SelectField {...props} name="Select" />
       <div className="text-sm mx-2 p-2 border-2 border-gray-200 border-solid">
-        {value}
+        {prompt}
       </div>
     </BaseNode>
   );

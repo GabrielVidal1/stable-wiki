@@ -45,7 +45,10 @@ export const TextField = ({ name, ...props }: TextFieldProps) => {
 };
 
 export interface SelectFieldProps
-  extends React.HTMLAttributes<HTMLSelectElement> {
+  extends React.DetailedHTMLProps<
+    React.SelectHTMLAttributes<HTMLSelectElement>,
+    HTMLSelectElement
+  > {
   name: string;
   options: string[];
 }
@@ -58,7 +61,7 @@ export const SelectField = ({ name, options, ...props }: SelectFieldProps) => {
         className="w-1/2 p-1 border border-gray-300 rounded-md"
       >
         {options.map((option) => (
-          <option key={option} value={option}>
+          <option key={option} value={option} className="text-ellipsis">
             {option}
           </option>
         ))}

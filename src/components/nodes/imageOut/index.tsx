@@ -10,14 +10,14 @@ interface ImageOutProps {
 const ImageOut = ({ data: { img, name } }: { data: ImageOutProps }) => {
   return (
     <BaseNode name="Image">
-      <div className="aspect-square ">
-        <img src={require("@site/static/img/examples/cat.jpeg").default} />
-      </div>
       <Handle
         type="target"
         position={Position.Left}
         className="w-16 !bg-teal-500"
       />
+      <div className="aspect-square mx-4 h-fit">
+        <img src={img} className="rounded" />
+      </div>
     </BaseNode>
   );
 };
