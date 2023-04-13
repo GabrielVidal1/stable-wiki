@@ -1,8 +1,4 @@
 {
   "label": "Customization",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Customize "
-  }
+  "position": 3
 }

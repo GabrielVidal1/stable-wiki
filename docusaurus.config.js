@@ -104,8 +104,9 @@ async function createConfig() {
             },
             {
               href: "https://github.com/GabrielVidal1/stable-wiki",
-              label: "GitHub",
               position: "right",
+              className: "header-github-link",
+              "aria-label": "GitHub repository",
             },
           ],
         },
