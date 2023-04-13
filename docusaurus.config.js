@@ -70,7 +70,7 @@ async function createConfig() {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         // Replace with your project's social card
-        image: "img/docusaurus-social-card.jpg",
+        // image: "TODO",
         navbar: {
           title: "Stable Wiki",
           logo: {
