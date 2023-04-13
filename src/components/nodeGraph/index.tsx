@@ -10,13 +10,15 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 import TextEncoderNode from "../nodes/textEncoder";
-import imageOut from "../nodes/imageOut";
+import image from "../nodes/image";
 import StableDiffusionNode from "../nodes/stableDiffusion";
+import VaeNode from "../nodes/vae";
 
 const defaultNodeTypes = {
   textEncoder: TextEncoderNode,
-  imageOut: imageOut,
+  image: image,
   stableDiffusion: StableDiffusionNode,
+  vae: VaeNode,
 };
 
 const defaultEdgeOptions = {
@@ -36,7 +38,11 @@ interface FlowProps<GraphContextType = {}> extends ReactFlowProps {
 
 const defaultAnimationDuration = 800;
 
-const Flow: React.FC<FlowProps> = ({ nodeTypes: nt, ...props }) => {
+const Flow: React.FC<FlowProps> = ({
+  nodeTypes: nt,
+  children: controls,
+  ...props
+}) => {
   const { setViewport, zoomIn, zoomOut } = useReactFlow();
 
   const viewport = useViewport();
@@ -60,13 +66,14 @@ const Flow: React.FC<FlowProps> = ({ nodeTypes: nt, ...props }) => {
 
         <div className="controls flex gap-2">
           <button onClick={handleTransform}>Reset View</button>
-          {/* <button
+          {controls}
+          <button
             onClick={() => {
               console.log(viewport);
             }}
           >
             Get Viewport
-          </button> */}
+          </button>
         </div>
       </ReactFlow>
     </div>

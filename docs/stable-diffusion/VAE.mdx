@@ -1,11 +1,20 @@
+import VaeExample from "@site/src/components/graphs/vae";
 
 # VAE
 
-The simplest explanation is that it makes an image small then makes it bigger again.
+<VaeExample />
+
+<br />
+
+:::tip What is a VAE?
+The simplest explanation is that it makes an image small
+then makes it bigger again.
+:::
 
 A Variational Autoencoder (VAE) is an artificial neural network architecture that belongs to the families of probabilistic graphical models and variational Bayesian methods. It is a type of neural network that learns to reproduce its input, and also map data to latent space. VAEs use probability modeling in a neural network system to provide the kinds of equilibrium that autoencoders are typically used to produce. The neural network components are typically referred to as the encoder and decoder for the first and second component respectively. VAE's are part of the neural network model that encodes and decodes the images to and from the smaller latent space, so that computation can be faster. Any models you use, be it v1, v2 or custom, already comes with a default VAE
 
 ## VAE (Variational Autoencoder) in Stable Diffusion
+
 In Stable Diffusion, the VAE (or encoder-decoder) component is responsible for compressing the input images into a smaller, latent space, which helps to reduce the VRAM requirements for the diffusion process. In practice, it is important to use a decoder that can effectively reconstruct the original image from the latent space representation.
 
 While the default VAE models included with Stable Diffusion are suitable for many applications, there are other fine-tuned models available that may better meet specific needs. For example, the Hugging Face model repository includes a range of fine-tuned VAE models that may be useful for certain tasks.
@@ -13,6 +22,7 @@ While the default VAE models included with Stable Diffusion are suitable for man
 When selecting a VAE model, it is important to consider factors such as dataset size, resolution, and other hyperparameters that may impact performance. Ultimately, the choice of VAE model will depend on the specific needs and requirements of the project at hand.
 
 ### Original Autoencoder in Stable Diffusion
+
 The original autoencoder included in Stable Diffusion is the default encoder-decoder used in the model. While it is generally effective at compressing images into a latent space for the diffusion process, it may not perform as well on certain types of images, particularly human faces.
 
 Over time, several fine-tuned autoencoder models have been developed and made available to the community. These models often perform better than the original autoencoder for specific tasks and image types.
@@ -20,6 +30,7 @@ Over time, several fine-tuned autoencoder models have been developed and made av
 When selecting an autoencoder model for a specific application, it is important to consider factors such as image resolution, dataset size, and other hyperparameters that may impact performance. Ultimately, the choice of the autoencoder model will depend on the specific needs and requirements of the project at hand.
 
 ### EMA VAE in Stable Diffusion
+
 The EMA (Exponential Moving Average) VAE is a fine-tuned encoder-decoder included in Stable Diffusion that is specifically designed to perform well on human faces. This model uses an exponential moving average of the encoder weights during training, which helps to stabilize the training process and improve overall performance.
 
 Compared to the original autoencoder included with Stable Diffusion, the EMA VAE generally produces better results on images of human faces. However, it is important to consider other factors such as image resolution, dataset size, and other hyperparameters when selecting a VAE model for a specific application.
@@ -27,6 +38,7 @@ Compared to the original autoencoder included with Stable Diffusion, the EMA VAE
 Overall, the EMA VAE is a valuable addition to the range of encoder-decoder models available in Stable Diffusion, particularly for applications that require high-quality image generation of human faces.
 
 ### MSE VAE in Stable Diffusion
+
 The MSE (Mean Squared Error) VAE is another fine-tuned encoder-decoder included in Stable Diffusion that is designed to perform well on images of human faces. This model uses MSE as the reconstruction loss during training, which can help to improve the quality of the reconstructed images.
 
 Compared to the original autoencoder and other VAE models included with Stable Diffusion, the MSE VAE generally produces better results on images of human faces. However, as with any model selection, it is important to consider other factors such as image resolution, dataset size, and other hyperparameters.
